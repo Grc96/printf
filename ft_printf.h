@@ -6,7 +6,7 @@
 /*   By: gdel-cas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 15:55:46 by gdel-cas          #+#    #+#             */
-/*   Updated: 2023/11/08 16:20:18 by gdel-cas         ###   ########.fr       */
+/*   Updated: 2023/11/09 18:19:36 by gdel-cas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,3 +18,8 @@
 # include <unistd.h>
 # include <stdlib.h>
 
+int	ft_printf(char const *str, ...);
+int	ft_printc(char c);
+
+
+#endif

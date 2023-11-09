@@ -4,15 +4,13 @@ RM = rm -f
 
 CFLAGS = -Wall -Wextra -Werror
 
-SRCs = 
-
+SRCs =
 
 
 
 
 
 OBJs = $(SRC:c=.o)
-
 
 all: $(NAME)
 
