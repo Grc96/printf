@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_printnum.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdel-cas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 15:55:46 by gdel-cas          #+#    #+#             */
-/*   Updated: 2023/11/10 17:32:17 by gdel-cas         ###   ########.fr       */
+/*   Created: 2023/11/10 17:34:34 by gdel-cas          #+#    #+#             */
+/*   Updated: 2023/11/10 17:46:29 by gdel-cas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "printf.h"
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+int	ft_putnbr(int i)
+{
 
-# include <stdarg.h>
-# include <unistd.h>
-# include <stdlib.h>
-
-int	ft_printf(char const *str, ...);
-int	ft_printc(int x);
-
-
-#endif
+}
