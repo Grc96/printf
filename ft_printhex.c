@@ -1,40 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_printhex.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdel-cas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 16:20:46 by gdel-cas          #+#    #+#             */
-/*   Updated: 2023/11/15 19:20:46 by gdel-cas         ###   ########.fr       */
+/*   Created: 2023/11/15 16:56:06 by gdel-cas          #+#    #+#             */
+/*   Updated: 2023/11/15 19:36:57 by gdel-cas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
 #include <unistd.h>
+#include "ft_printf.h"
 
-
-
-
-int	ft_printf(char const *str, ...)
+int	ft_printhex(unsigned int i, int base )
 {
-	va_list	arg;
-	char	*a;
-	unsigned int	i; 
-	
-	va_start(arg, str);
-	i = 0;
-	a = "cspdiuxX%"
-	while (str[i] != '\0')
-	{
-		va_arg(arg, char *);
-		write(1, a, 6);
-		if (str[i] == '%')
-		i++;
-	}
-	va_end(arg);
+	char	*low;
+	char	*up;
+	int	numchar;
 
-	
-	return (0);
+	low = "0123456789abcdef";
+	up = "0123456789ABCDEF";
+	numchar = 0;
+
+	if (i >= 16)
+	{
+		numchar += ft_printhex(i / 16, base);
+		numchar += ft_printhex(i % 16, base);
+	}
+	else
+	{
+		if (base == 1)
+			numchar += ft_printchr(low[i]);
+		else 
+			numchar += ft_printchr(up[i]);
+
+	}
+	return (numchar);
 }
 
+
+int	main()
+{
+	printft_printhex()
+}

@@ -5,9 +5,9 @@
 int	main()
 {
 	char	*s = "Gracia";
-
-	printf("Hola %s\n", s);
-	ft_printf("Hola %s\n", s);
+	char	c = 'A';
+	
+	ft_printf("Hola %c\n", c);
 	return (0);
 }
 

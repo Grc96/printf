@@ -4,13 +4,21 @@ RM = rm -f
 
 CFLAGS = -Wall -Wextra -Werror
 
-SRCs =
+SRCs = ft_printf.c \
+       ft_printchr.c \
+       ft_printint.c \
+       ft_printstr.c \
+       ft_printpoint.c \
+       ft_printusigint.c \
+       ft_printhex.c \
 
 
 
 
 
-OBJs = $(SRC:c=.o)
+
+
+OBJs = $(SRCs:.c=.o)
 
 all: $(NAME)
 
@@ -27,6 +35,12 @@ fclean: clean
 	$(RM) $(NAME)
 
 re:	fclean all
+
+
+
+
+.PHONY: all clean fclean re
+.SILENT: all $(NAME) $(OBJs) clean fclean re
 
 
 

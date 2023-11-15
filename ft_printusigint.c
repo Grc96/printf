@@ -1,20 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printc.c                                        :+:      :+:    :+:   */
+/*   ft_printusigint.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdel-cas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/10 17:11:37 by gdel-cas          #+#    #+#             */
-/*   Updated: 2023/11/10 17:33:55 by gdel-cas         ###   ########.fr       */
+/*   Created: 2023/11/14 18:51:15 by gdel-cas          #+#    #+#             */
+/*   Updated: 2023/11/14 19:08:32 by gdel-cas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"printf.h"
+#include <stdio.h>
+#include "ft_printf.h"
 
-int	ft_printc(int x)
+int	ft_printusigint(unsigned int i)
 {
-	int	num;
-	num = write(1, &x, 1);
-	return(num);
+	int	numchar;
+	unsigned int 	num;
+
+	num = i;
+	numchar = 0;
+	if (num > 9)
+	{
+		numchar += ft_printusigint(num / 10);
+		numchar += ft_printusigint(num % 10);
+	}
+	else
+		numchar += ft_printchr(num + '0');
+	return (numchar);
+
 }

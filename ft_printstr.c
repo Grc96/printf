@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_printstr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdel-cas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 15:55:46 by gdel-cas          #+#    #+#             */
-/*   Updated: 2023/11/15 18:39:08 by gdel-cas         ###   ########.fr       */
+/*   Created: 2023/11/13 19:22:23 by gdel-cas          #+#    #+#             */
+/*   Updated: 2023/11/14 18:33:37 by gdel-cas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+#include "ft_printf.h"
+int	ft_printstr(char *str)
+{
+	int	numchar;
+	int	i;
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
-
-# include <stdarg.h>
-# include <unistd.h>
-# include <stdlib.h>
-
-/*MAIN FUNCTION*/
-int	ft_printf(char const *str, ...);
-
-/*INC*/
-int	ft_printchr(int x);
-int	ft_printint(int n);
-int	ft_printstr(char *str);
-int	ft_printusigint(unsigned int i);
-int	ft_printhex(unsigned int i, int base);
-
-
-#endif
+	numchar = 0;
+	i = 0;
+	if(!str)
+	{
+		numchar += write (1, "NULL", 4);
+		return(numchar);
+	}
+	while (str[i] != '\0')
+	{
+		numchar += write (1, &str[i++],1);
+	}
+	return (numchar);
+}
