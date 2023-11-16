@@ -6,7 +6,7 @@
 /*   By: gdel-cas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 15:55:46 by gdel-cas          #+#    #+#             */
-/*   Updated: 2023/11/15 18:39:08 by gdel-cas         ###   ########.fr       */
+/*   Updated: 2023/11/16 18:56:44 by gdel-cas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int	ft_printint(int n);
 int	ft_printstr(char *str);
 int	ft_printusigint(unsigned int i);
 int	ft_printhex(unsigned int i, int base);
+char 	*ft_strchr(const char *s, int c);
 
 
 #endif

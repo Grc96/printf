@@ -1,40 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printhex.c                                      :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdel-cas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/15 16:56:06 by gdel-cas          #+#    #+#             */
-/*   Updated: 2023/11/16 15:15:48 by gdel-cas         ###   ########.fr       */
+/*   Created: 2023/11/16 18:35:58 by gdel-cas          #+#    #+#             */
+/*   Updated: 2023/11/16 18:41:51 by gdel-cas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "ft_printf.h"
 
-int	ft_printhex(unsigned int i, int base )
+char	*ft_strchr(const char *s, int c)
 {
-	char	*low;
-	char	*up;
-	int	numchar;
+	int	i;
 
-	low = "0123456789abcdef";
-	up = "0123456789ABCDEF";
-	numchar = 0;
-
-	if (i >= 16)
+	i = 0;
+	while (s[i])
 	{
-		numchar += ft_printhex(i / 16, base);
-		numchar += ft_printhex(i % 16, base);
+		if (s[i] == (char)c)
+			return ((char *)&s[i]);
+		i++;
 	}
-	else
-	{
-		if (base == 1)
-			numchar += ft_printchr(low[i]);
-		else 
-			numchar += ft_printchr(up[i]);
-
-	}
-	return (numchar);
+	if (s[i] == '\0' && (char)c == '\0')
+		return ((char *)&s[i]);
+	return (NULL);
 }

@@ -4,10 +4,10 @@
 
 int	main()
 {
-	char	*s = "Gracia";
 	char	c = 'A';
 	
-	ft_printf("Hola %c\n", c);
+	printf("org%c\n", c);
+	ft_printf("mia%c\n", c);
 	return (0);
 }
 
