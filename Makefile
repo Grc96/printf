@@ -12,6 +12,7 @@ SRCs = ft_printf.c \
        ft_printusigint.c \
        ft_printhex.c \
        ft_strchr.c \
+       ft_printpoint.c \
 
 
 

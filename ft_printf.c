@@ -6,7 +6,7 @@
 /*   By: gdel-cas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 16:20:46 by gdel-cas          #+#    #+#             */
-/*   Updated: 2023/11/16 18:57:47 by gdel-cas         ###   ########.fr       */
+/*   Updated: 2023/11/27 18:31:44 by gdel-cas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,25 +27,34 @@ int	ft_formats(va_list arg, unsigned int numchar  , int i)
 		numchar += ft_printhex(va_arg(arg, unsigned int), 1);
 	else if (i == 'X')
 		numchar += ft_printhex(va_arg(arg,unsigned int), 0);
+	else if (i == 'p')
+	{
+		write(1, "0x", 2)
+			write(1, "0x", 2);
+		numchar += ft_printpoint(va_arg(arg,unsigned long long int),1);
+	}
+	return (numchar);
 }
 
 int	ft_printf(char const *str, ...)
 {
 	va_list	arg;
-	char	*a;
 	unsigned int	i; 
-	
+	int	total;
+
 	va_start(arg, str);
 	i = 0;
-	a = "cspdiuxX%";
 	while (str[i] != '\0')
 	{
 		if (str[i] == '%')
+		{
+			i++;
+			total = ft_formats(arg, total, str[i]);
+		}
+		else 
+			total += write(1, &str[i], 1);
 		i++;
 	}
 	va_end(arg);
-
-	
-	return (0);
+	return (total);
 }
-

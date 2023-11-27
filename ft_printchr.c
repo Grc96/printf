@@ -6,14 +6,14 @@
 /*   By: gdel-cas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 17:11:37 by gdel-cas          #+#    #+#             */
-/*   Updated: 2023/11/14 18:32:36 by gdel-cas         ###   ########.fr       */
+/*   Updated: 2023/11/23 16:14:53 by gdel-cas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <unistd.h>
 
-int	ft_printc(int x)
+int	ft_printchr(int x)
 {
 	int	num;
 	num = write(1, &x, 1);
