@@ -6,7 +6,7 @@
 /*   By: gdel-cas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 16:20:46 by gdel-cas          #+#    #+#             */
-/*   Updated: 2023/11/27 18:31:44 by gdel-cas         ###   ########.fr       */
+/*   Updated: 2023/11/29 17:44:41 by gdel-cas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,15 @@ int	ft_formats(va_list arg, unsigned int numchar  , int i)
 	else if (i == 'x')
 		numchar += ft_printhex(va_arg(arg, unsigned int), 1);
 	else if (i == 'X')
-		numchar += ft_printhex(va_arg(arg,unsigned int), 0);
+		numchar += ft_printhex(va_arg(arg, unsigned int), 0);
 	else if (i == 'p')
 	{
-		write(1, "0x", 2)
-			write(1, "0x", 2);
-		numchar += ft_printpoint(va_arg(arg,unsigned long long int),1);
+		write(1, "0x", 2);
+		numchar += ft_printpoint(va_arg(arg, unsigned long long int),1);
 	}
+	else if (i == '%')
+		numchar += write(1, "%", 1);
+
 	return (numchar);
 }
 
