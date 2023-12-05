@@ -4,10 +4,11 @@
 
 int	main()
 {
-	char	c[] = "hola cafracola" ;
+ 	int x;	
 	
-	printf("org: %s%s\n", c);
-	ft_printf("mia: %s%\sn", c);
+	printf("org:%p\n", "");
+	x = ft_printf("mia:%p\n", "");
+	printf ("%d", x);
 	return (0);
 }
 

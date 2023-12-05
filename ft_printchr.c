@@ -6,7 +6,7 @@
 /*   By: gdel-cas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 17:11:37 by gdel-cas          #+#    #+#             */
-/*   Updated: 2023/11/23 16:14:53 by gdel-cas         ###   ########.fr       */
+/*   Updated: 2023/12/05 17:28:30 by gdel-cas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 int	ft_printchr(int x)
 {
 	int	num;
+
 	num = write(1, &x, 1);
-	return(num);
+	return (num);
 }

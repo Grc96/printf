@@ -6,7 +6,7 @@
 /*   By: gdel-cas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 18:51:15 by gdel-cas          #+#    #+#             */
-/*   Updated: 2023/11/14 19:08:32 by gdel-cas         ###   ########.fr       */
+/*   Updated: 2023/12/05 17:40:52 by gdel-cas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 int	ft_printusigint(unsigned int i)
 {
-	int	numchar;
-	unsigned int 	num;
+	int				numchar;
+	unsigned int	num;
 
 	num = i;
 	numchar = 0;
@@ -28,5 +28,4 @@ int	ft_printusigint(unsigned int i)
 	else
 		numchar += ft_printchr(num + '0');
 	return (numchar);
-
 }
